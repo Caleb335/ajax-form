@@ -1,7 +1,7 @@
 // targetting all form input fields
-var firstChoice = document.getElementById("firstChoice").value;
-var secondChoice = document.getElementById("secondChoice").value;
-var thirdChoice = document.getElementById("thirdChoice").value;
+var firstChoice = document.getElementById("firstChoice");
+var secondChoice = document.getElementById("secondChoice");
+var thirdChoice = document.getElementById("thirdChoice");
 
 // button element
 var button = document.getElementById("submit-btn");
@@ -17,26 +17,31 @@ let err = document.getElementById("errMsg");
 // validation handler
 function validateInput(e) {
   e.preventDefault();
-  if (firstChoice === "") {
+  if (firstChoice.value === "") {
     alert("first choice cannot be empty");
-    return;
+    firstChoice.focus();
+    return false;
   }
-  if (secondChoice === "") {
+  if (secondChoice.value === "") {
     alert("second choice cannot be empty");
-    return;
+    secondChoice.focus();
+    return false;
   }
-  if (thirdChoice === "") {
+  if (thirdChoice.value === "") {
     alert("your third choice cannot be blank");
-    return;
+    thirdChoice.focus();
+    return false;
   }
   if (
-    firstChoice !== "calculus" &&
-    secondChoice !== "calculus" &&
-    thirdChoice !== "calculus"
+    firstChoice.value !== "calculus" &&
+    secondChoice.value !== "calculus" &&
+    thirdChoice.value !== "calculus"
   ) {
-    alert("your choice should include claculus");
-    return;
+    alert("At least one of your courses should be calculus.");
+    thirdChoice.focus() || firstChoice.focus() || secondChoice.focus();
+    return false;
   }
+  return alert("your courses have been submitted successfully!"), true;
 }
 
 button.addEventListener("click", validateInput);
