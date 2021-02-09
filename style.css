@@ -3,10 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-.error-display {
-    display: none;
-    border: 1px solid red;
-}
 form {
   padding: 5px 8px;
   margin: 0 auto;
@@ -17,13 +13,13 @@ form h1 {
   padding-bottom: 20px;
   text-align: center;
 }
+.error-display {
+  border: 1px solid red;
+  height: 100%;
+  display: none;
+}
 .form-group {
-  display: block;></div>
-  <main>
-    <form class="form">
-      <h1>Choice of course</h1>
-      <div class="form-group">
-        <label for="fi
+  display: block;
   padding: 10px 0;
 }
 .form-control {
@@ -57,5 +53,9 @@ form button:hover {
 @media only screen and (max-width: 768px) {
   .form {
     width: 100%;
+    margin-top: 65px;
+  }
+  .form-group {
+    padding: 17px 0;
   }
 }
