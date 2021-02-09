@@ -38,6 +38,7 @@ function validateInput(e) {
     thirdChoice.value !== "calculus"
   ) {
     alert("At least one of your courses should be calculus.");
+    thirdChoice.focus();
     thirdChoice.focus() || firstChoice.focus() || secondChoice.focus();
     return false;
   }
