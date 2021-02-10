@@ -16,26 +16,26 @@ let err = document.getElementById("errMsg");
 
 // validation handler
 function validateInput() {
-  if (!firstChoice.value && !secondChoice.value && !thirdChoice.value) {
-    alert("All the input fields cannot be empty.");
-    firstChoice.focus();
-    return false;
-  }
-  if (firstChoice.value === "") {
-    alert("first choice cannot be empty");
-    firstChoice.focus();
-    return false;
-  }
-  if (secondChoice.value === "") {
-    alert("second choice cannot be empty");
-    secondChoice.focus();
-    return false;
-  }
-  if (thirdChoice.value === "") {
-    alert("your third choice cannot be blank");
-    thirdChoice.focus();
-    return false;
-  }
+  // if (!firstChoice.value && !secondChoice.value && !thirdChoice.value) {
+  //   alert("All the input fields cannot be empty.");
+  //   firstChoice.focus();
+  //   return false;
+  // }
+  // if (firstChoice.value === "") {
+  //   alert("first choice cannot be empty");
+  //   firstChoice.focus();
+  //   return false;
+  // }
+  // if (secondChoice.value === "") {
+  //   alert("second choice cannot be empty");
+  //   secondChoice.focus();
+  //   return false;
+  // }
+  // if (thirdChoice.value === "") {
+  //   alert("your third choice cannot be blank");
+  //   thirdChoice.focus();
+  //   return false;
+  // }
   if (
     firstChoice.value.toLowerCase() !== "calculus" &&
     secondChoice.value.toLowerCase() !== "calculus" &&
@@ -43,6 +43,7 @@ function validateInput() {
   ) {
     alert("At least one of your courses should be calculus.");
     secondChoice.focus();
+    return false;
   }
   alert("courses submitted sucessfully!");
   return true;
