@@ -15,8 +15,7 @@ var form = document.getElementById("form");
 let err = document.getElementById("errMsg");
 
 // validation handler
-function validateInput(e) {
-  e.preventDefault();
+function validateInput() {
   if (!firstChoice.value && !secondChoice.value && !thirdChoice.value) {
     alert("All the input fields cannot be empty.");
     firstChoice.focus();
@@ -45,10 +44,10 @@ function validateInput(e) {
     alert("At least one of your courses should be calculus.");
     secondChoice.focus();
   }
-  return alert("your courses have been submitted successfully!"), true;
+  return true;
 }
 
-button.addEventListener("click", validateInput);
+// button.addEventListener("click", validateInput);
 
 window.addEventListener("load", () => {
   // the AJAX http request goes here
@@ -69,7 +68,15 @@ window.addEventListener("load", () => {
       alert("An error ocur while trying to send your courses to the server.");
     });
     // this mehod below sets our post request
-    req.open("POST", "https://example.com");
+    req.open("POST", "https://example.com/cors.php");
+
+    // adding a request header to allow "cross origin resource sharing"
+    req.setRequestHeader(
+      "Content-Type",
+      "application/x-www-form-urlencoded"
+      //   "Access-Control-Allow-Origin"
+    );
+
     req.send(coursesChoice);
   }
 
