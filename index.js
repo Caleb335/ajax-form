@@ -17,6 +17,11 @@ let err = document.getElementById("errMsg");
 // validation handler
 function validateInput(e) {
   e.preventDefault();
+  if (!firstChoice.value && !secondChoice.value && !thirdChoice.value) {
+    alert("All the input fields cannot be empty.");
+    firstChoice.focus();
+    return false;
+  }
   if (firstChoice.value === "") {
     alert("first choice cannot be empty");
     firstChoice.focus();
@@ -38,7 +43,7 @@ function validateInput(e) {
     thirdChoice.value.toLowerCase() !== "calculus"
   ) {
     alert("At least one of your courses should be calculus.");
-    return false;
+    secondChoice.focus();
   }
   return alert("your courses have been submitted successfully!"), true;
 }
