@@ -33,13 +33,11 @@ function validateInput(e) {
     return false;
   }
   if (
-    firstChoice.value !== "calculus" &&
-    secondChoice.value !== "calculus" &&
-    thirdChoice.value !== "calculus"
+    firstChoice.value.toLowerCase() !== "calculus" &&
+    secondChoice.value.toLowerCase() !== "calculus" &&
+    thirdChoice.value.toLowerCase() !== "calculus"
   ) {
     alert("At least one of your courses should be calculus.");
-    thirdChoice.focus();
-    thirdChoice.focus() || firstChoice.focus() || secondChoice.focus();
     return false;
   }
   return alert("your courses have been submitted successfully!"), true;
