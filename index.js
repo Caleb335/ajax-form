@@ -44,6 +44,7 @@ function validateInput() {
     alert("At least one of your courses should be calculus.");
     secondChoice.focus();
   }
+  alert("courses submitted sucessfully!");
   return true;
 }
 
@@ -68,7 +69,7 @@ window.addEventListener("load", () => {
       alert("An error ocur while trying to send your courses to the server.");
     });
     // this mehod below sets our post request
-    req.open("POST", "https://example.com/cors.php");
+    req.open("POST", "https://google.com/");
 
     // adding a request header to allow "cross origin resource sharing"
     req.setRequestHeader(
